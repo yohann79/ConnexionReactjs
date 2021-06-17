@@ -1,5 +1,4 @@
 import React from "react";
-import {Component} from "react";
 import { Card,CardContent,CardHeader,Container,Typography,Button,TextField } from '@material-ui/core';
 import './Connexion.css';
 
@@ -12,7 +11,7 @@ class Connexion extends React.Component {
         this.state = {
             formData: {}, // Contains login form data
             formSubmitted: false, // Indicates submit status of login form
-            loading: false // Indicates in progress state of login form
+
         }
     }
 
@@ -20,6 +19,7 @@ class Connexion extends React.Component {
         const target = event.target;
         const value = target.value;
         const name = target.name;
+
 
         let {formData} = this.state;
         formData[name] = value;
@@ -33,14 +33,14 @@ class Connexion extends React.Component {
     login = (e: any) => {
 
         e.preventDefault();
-        alert("You are successfully signed in...");
+        alert("Connecté !");
         window.location.reload()
 
     }
 
     render() {
 
-        const { errors, formSubmitted } = this.state;
+        const {formSubmitted } = this.state;
 
         return (
             <div className="Login">
