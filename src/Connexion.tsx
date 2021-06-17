@@ -1,11 +1,12 @@
 import React from "react";
 import {Component} from "react";
 import { Card,CardContent,CardHeader,Container,Typography,Button,TextField } from '@material-ui/core';
-import './login.sass';
+import './Connexion.css';
 
-class Login extends Component {
+class Connexion extends React.Component {
 
-    constructor(props) {
+
+    constructor(props: any) {
         super(props)
 
         this.state = {
@@ -15,12 +16,12 @@ class Login extends Component {
         }
     }
 
-    handleInputChange = (event) => {
+    handleInputChange = (event: any) => {
         const target = event.target;
         const value = target.value;
         const name = target.name;
 
-        let { formData } = this.state;
+        let {formData} = this.state;
         formData[name] = value;
 
         this.setState({
@@ -29,7 +30,7 @@ class Login extends Component {
     }
 
 
-    login = (e) => {
+    login = (e: any) => {
 
         e.preventDefault();
         alert("You are successfully signed in...");
@@ -61,4 +62,4 @@ class Login extends Component {
     }
 }
 
-export default Login;
+export default Connexion;
