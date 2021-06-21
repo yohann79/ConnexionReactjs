@@ -2,7 +2,15 @@ import React from "react";
 import { Card,CardContent,CardHeader,Container,Typography,Button,TextField } from '@material-ui/core';
 import './Connexion.css';
 
-class Connexion extends React.Component {
+interface State {
+    formData: {
+        utilisateur?: string
+        password?: string
+    }
+    formSubmitted: boolean
+}
+
+class Connexion extends React.Component<{}, State> {
 
 
     constructor(props: any) {
@@ -22,7 +30,7 @@ class Connexion extends React.Component {
 
 
         let {formData} = this.state;
-        formData[name] = value;
+        formData[name as 'utilisateur' | 'password'] = value;
 
         this.setState({
             formData: formData
@@ -44,8 +52,8 @@ class Connexion extends React.Component {
 
         return (
             <div className="Login">
-
-                    <Card onSubmit={this.login}>
+                <form onSubmit={this.login}>
+                    <Card>
                         <CardContent id="email">
                             <Typography>Utilisateur</Typography>
                             <TextField type="text" name="utilisateur" placeholder="Utilisateur" onChange={this.handleInputChange} />
@@ -56,7 +64,7 @@ class Connexion extends React.Component {
                         </CardContent>
                         <Button type="submit" >valider</Button>
                     </Card>
-
+                </form>
             </div>
         )
     }
