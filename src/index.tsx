@@ -8,11 +8,11 @@ ReactDOM.render(
     <React.StrictMode>
         <App />
     </React.StrictMode>,
-    document.getElementById('connexion')
+    document.getElementById('root')
 );
-ReactDOM.render(
-    <React.StrictMode>
-        <Bienvenue/>
-    </React.StrictMode>,
-    document.getElementById('bienvenue')
-);
+// ReactDOM.render(
+//     <React.StrictMode>
+//         <Bienvenue/>
+//     </React.StrictMode>,
+//     document.getElementById('bienvenue')
+// );
